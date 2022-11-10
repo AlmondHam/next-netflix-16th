@@ -13,6 +13,7 @@ export default function Home({ data, data2 }) {
   //src={`https://image.tmdb.org/t/p/original/${data[randomPic].poster_path}`}
   ///>
   console.log(data.results[randomPic]);
+
   return (
     <BoxContainer>
       <Head>
