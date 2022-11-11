@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHouse,
@@ -13,8 +15,8 @@ import { useRouter } from 'next/router';
 export default function NavBar() {
   const router = useRouter();
   return (
-    <nav>
-      <div className="container">
+    <Nav>
+      <Container>
         <Link href="/home">
           <div
             className={
@@ -32,7 +34,7 @@ export default function NavBar() {
             }
           >
             <FontAwesomeIcon icon={faMagnifyingGlass} size={'1x'} />
-            <div className="nav-text">Search</div>
+            <NavText>Search</NavText>
           </div>
         </Link>
         <Link href="/comming-soon">
@@ -44,7 +46,7 @@ export default function NavBar() {
             }
           >
             <FontAwesomeIcon icon={faPlay} size={'1x'} />
-            <div className="nav-text">Comming Soon</div>
+            <NavText>Comming Soon</NavText>
           </div>
         </Link>
         <Link href="/downloads">
@@ -54,7 +56,7 @@ export default function NavBar() {
             }
           >
             <FontAwesomeIcon icon={faArrowDown} size={'1x'} />
-            <div className="nav-text">Downloads</div>
+            <NavText>Downloads</NavText>
           </div>
         </Link>
         <Link href="/menu">
@@ -64,46 +66,49 @@ export default function NavBar() {
             }
           >
             <FontAwesomeIcon icon={faBars} size={'1x'} />
-            <div className="nav-text">More</div>
+            <NavText>More</NavText>
           </div>
         </Link>
-      </div>
-
-      <style jsx>{`
-        nav {
-          width: 100vw;
-          height: 48px;
-
-          position: fixed;
-          bottom: 0;
-        }
-        .container {
-          width: 100%;
-          height: 100%;
-
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 2.5rem;
-
-          background: #121212;
-        }
-        .active {
-          color: white;
-        }
-        .nav-link {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 5px;
-        }
-        .nav-text {
-          font-family: 'SF Pro Display';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 8.2px;
-        }
-      `}</style>
-    </nav>
+      </Container>
+      <style jsx>
+        {`
+          .active {
+            color: white;
+          }
+          .nav-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+          }
+        `}
+      </style>
+    </Nav>
   );
 }
+
+const Nav = styled.nav`
+  width: 100vw;
+  height: 48px;
+
+  position: fixed;
+  bottom: 0;
+`;
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+
+  background: #121212;
+`;
+
+const NavText = styled.div`
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 8.2px;
+`;
