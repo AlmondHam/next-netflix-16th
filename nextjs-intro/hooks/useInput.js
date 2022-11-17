@@ -22,7 +22,7 @@ export default function useInput() {
         `https://api.themoviedb.org/3/search/movie?api_key=${NEXT_PUBLIC_API_KEY}&language=en-US&query=${e.target.value}&include_adult=false`
       )
     ).json();
-    console.log(movies);
+
     setSearchResults(movies);
   };
 
