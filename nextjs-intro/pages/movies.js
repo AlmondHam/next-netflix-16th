@@ -25,7 +25,6 @@ export default function movies({ data }) {
 }
 
 const API_KEY = process.env.API_KEY;
-
 export async function getServerSideProps() {
   const data = await (
     await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}`)
