@@ -13,6 +13,7 @@ import { useRouter } from 'next/router';
 
 const NavBar = () => {
   const router = useRouter();
+
   return (
     <Nav>
       <Container>
@@ -85,3 +86,5 @@ const NavText = styled.div`
   font-weight: 500;
   font-size: 8.2px;
 `;
+
+export default NavBar;
